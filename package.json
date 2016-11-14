@@ -1,0 +1,10 @@
+{
+  "name": "teleport-flask-webrouter",
+  "publishConfig": {
+    "registry": "https://npm-registry.corp.snips.net"
+  },
+  "scripts": {
+    "update": "npm unpublish teleport-flask-webrouter@0.0.1 && npm publish"
+  },
+  "version": "0.0.6"
+}
