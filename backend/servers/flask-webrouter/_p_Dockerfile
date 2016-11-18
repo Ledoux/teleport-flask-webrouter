@@ -1,5 +1,5 @@
-FROM $(backend.registryServer)/$(server.docker.base.tag):$(server.docker.base.version)
-MAINTAINER $(server.maintainer)
+FROM $(registry.host):$(registry.port)/$(base.tag):$(base.version)
+MAINTAINER $(maintainer.name) $(maintainer.email)
 
 ADD . /opt/docker/
 

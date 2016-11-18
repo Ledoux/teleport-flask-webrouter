@@ -3,10 +3,13 @@
 		"serversByName": {
 			"flask-webrouter": {
 				"docker": {
-					"version": "0.1"
+					"imagesByName": {
+						"current": {
+							"version": "0.1"
+						}
+					}
 				},
-				"dockerVersion": "0.1",
-				"imageAbbreviation": "wbr",
+				"abbreviation": "wbr",
 				"isMain": true,
 				"runsByTypeName": {
 					"localhost": {
