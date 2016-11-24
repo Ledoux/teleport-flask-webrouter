@@ -20,8 +20,6 @@
 			}
 		}
 	},
-	"pip": "/usr/local/bin/pip",
-	"python": "/usr/local/bin/python",
 	"templateNames": [
 	]
 }
