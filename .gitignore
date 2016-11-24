@@ -1,8 +1,0 @@
-node_modules
-venv
-src
-
-*.pyc
-
-*secret.json
-*client_secret.json
