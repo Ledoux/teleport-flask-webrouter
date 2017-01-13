@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    k8s-app: $(run.tag)
-  name: $(run.tag)
+    k8s-app: $[run.tag]
+  name: $[run.tag]
   namespace: default
 spec:
   ports:
     - name: server
-      targetPort: $(run.port)
-      port: $(run.port)
+      targetPort: $[run.port]
+      port: $[run.port]
   selector:
-    k8s-app: $(run.tag)
+    k8s-app: $[run.tag]

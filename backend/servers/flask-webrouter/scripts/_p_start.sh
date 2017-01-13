@@ -1,2 +1,2 @@
 #!/bin/sh
-uwsgi --ini config/$(type.name)_uwsgi.ini
+uwsgi --ini config/$[type.name]_uwsgi.ini

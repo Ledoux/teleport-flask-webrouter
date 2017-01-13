@@ -5,7 +5,7 @@ else
   VIRTUAL_ENV_OPTION = ""
 fi
 if [ "$MODE" != "localhost" ] ; then
-  $(manageExtraConfig) uwsgi $VIRTUAL_ENV_OPTION --ini config/localhost_uwsgi.ini
+  $[manageExtraConfig] export URL=$[run.url] && uwsgi $VIRTUAL_ENV_OPTION --ini config/localhost_uwsgi.ini
 else
-  $(manageExtraConfig) python scripts/manage.py runserver
+  $[manageExtraConfig] && python scripts/manage.py runserver
 fi

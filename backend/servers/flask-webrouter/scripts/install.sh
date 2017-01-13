@@ -1,2 +1,2 @@
 #!/bin/sh
-pip install -r config/requirements.txt
+pip install -r requirements.txt
