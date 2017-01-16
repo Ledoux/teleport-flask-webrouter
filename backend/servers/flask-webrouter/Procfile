@@ -1,1 +1,0 @@
-web: echo $TYPE && uwsgi --ini config/$TYPE_heroku_uwsgi.ini
