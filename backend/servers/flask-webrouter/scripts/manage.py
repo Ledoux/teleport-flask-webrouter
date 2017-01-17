@@ -13,7 +13,8 @@ from app import app
 # ENVIRONMENT
 #
 PORT = 5000
-SERVER = '//'.join(os.environ['URL'].split('//')[1:])
+URL = os.environ.get('URL', 'http://localhost:' + str(PORT))
+SERVER = '//'.join(URL.split('//')[1:])
 if ':' in SERVER:
     PORT = int(SERVER.split(':')[-1])
 elif 'PORT' in os.environ:
