@@ -1,1 +1,0 @@
-$[for typeName in project.typeNames] web-$[[typeName]]: sh scripts/$[[typeName]]_heroku_start.sh
