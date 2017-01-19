@@ -1,4 +1,4 @@
-FROM $[registry.host]:$[registry.port]/$[base.tag]:$[base.version]
+FROM $[registry.url]/$[base.tag]:$[base.version]
 MAINTAINER $[maintainer.name] $[maintainer.email]
 
 ADD . /opt/docker/
