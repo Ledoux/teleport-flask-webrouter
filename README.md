@@ -1,13 +1,8 @@
-# teleport-flask-webrouter
+# Teleport flask webrouter
+A [Teleport](https://github.com/snipsco/teleport) backend template to build a flask server.
 
-This is a template from the app https://github.com/snipsco/teleport, that helps you to
-build a flask server that is automatically deployed on a certain docker/kubernetes
-config.
-
-You can test yourself with
+## How to use it
+Simply add it to the list of templates. For instance:
 ```
-tpt -c --project my-app --templates teleport-flask-webrouter,teleport-snips
+tpt -c --project my-app --templates teleport-flask-webrouter,teleport-heroku
 ```
-and then follow these instructions https://github.com/snipsco/teleport/blob/master/README.md#start-a-new-project
-
-See for instance how this was used to deploy our slack bot https://github.com/snipsco/snips-sdk-ds/tree/master/tools/slack-sdk
