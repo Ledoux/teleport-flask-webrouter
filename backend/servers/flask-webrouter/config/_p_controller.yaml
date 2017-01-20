@@ -17,7 +17,7 @@ spec:
       nodeName: $[type.subDomain].$[kubernetes.nodeDomain]
       containers:
         - name: $[run.tag]
-          image: $[registry.host]:$[registry.port]/$[run.tag]:$[current.version]
+          image: $[registry.url]/$[run.tag]:$[current.version]
           imagePullPolicy: Always
           ports:
             - name: server
