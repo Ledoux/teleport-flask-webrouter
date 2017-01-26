@@ -1,4 +1,7 @@
 {
+	"author": "The Snips Tooling Team",
+	"license": "MIT",
+	"description": "Teleport backend template to build a flask server",
 	"name": "teleport-flask-webrouter",
 	"publishConfig": {
 		"registry": "https://npm-registry.corp.snips.net"
