@@ -86,22 +86,6 @@ def get_home_redirect(path):
 	return get_home()
 
 #
-# LOGIN
-#
-# if the module private is not inside the module folder,
-# then the login manager of flask is not called to be set.
-# By a certain non explained almost magical reason, this fix the property of
-# the flask to render static files.
-is_login = os.path.isfile('./app/modules/private.py')
-if is_login:
-    from flask.ext.login import LoginManager,current_user
-    login_manager = LoginManager(app)
-    login_manager.login_view = 'private.login_index'
-    @app.before_request
-    def add_user_before_request():
-        g.user = current_user
-
-#
 # BLUEPRINTS
 #
 # then we can also go to specific modules inside this webserver
