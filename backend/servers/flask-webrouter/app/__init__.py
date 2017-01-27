@@ -16,7 +16,6 @@ default = {
     'DATA': "localhost",
     'SITE_NAME': "",
     'TYPE': "localhost",
-    'WEB': "on",
     'URL': "http://localhost:5000"
 }
 config = {}
