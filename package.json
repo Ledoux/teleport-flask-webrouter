@@ -3,5 +3,5 @@
 	"license": "MIT",
 	"description": "Teleport backend template to build a flask server",
 	"name": "teleport-flask-webrouter",
-	"version": "0.1.2"
+	"version": "0.1.3"
 }
