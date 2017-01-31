@@ -1,4 +1,6 @@
 # Teleport flask webrouter
+[![npm version](https://badge.fury.io/js/teleport-flask-webrouter.svg)](https://badge.fury.io/js/teleport-flask-webrouter)
+
 A [Teleport](https://github.com/snipsco/teleport) backend template to build a flask server.
 
 ## How to use it
