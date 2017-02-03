@@ -2,6 +2,7 @@
 # IMPORTS
 #
 from flask import Flask,render_template
+import json
 import os
 
 #
@@ -15,6 +16,7 @@ app = Flask(__name__)
 default = {
     'DATA': "localhost",
     'SITE_NAME': "",
+    'TEMPLATES': "",
     'TYPE': "localhost",
     'URL': "http://localhost:5000"
 }
@@ -31,6 +33,7 @@ app.config['HOST_DIR'] = "./" if app.config['TYPE'] != 'localhost' else os.path.
 #
 flask_env = {
     "SITE_NAME": app.config["SITE_NAME"],
+    "templates": json.loads(app.config["TEMPLATES"]),
     "WEB": app.config["WEB"]
 }
 

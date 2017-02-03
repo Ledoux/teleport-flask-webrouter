@@ -20,6 +20,5 @@
 			}
 		}
 	},
-	"templateNames": [
-	]
+	"iconUrl": "https://raw.githubusercontent.com/snipsco/teleport-flask-webrouter/master/teleport-flask-webrouter.png"
 }
