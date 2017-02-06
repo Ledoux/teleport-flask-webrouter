@@ -1,65 +1,19 @@
-#
-# IMPORTS
-#
 from flask import Flask,render_template
 import json
 import os
+import sys
 
-#
-# FLASK
-#
+APP_DIR = '/'.join(__file__.split('/')[:-1])
+LIB_DIR = os.path.join(APP_DIR, 'lib')
+sys.path.append(LIB_DIR)
+from config import config_with_app
+from routes import routes_with_app
+
 app = Flask(__name__)
+app.config['APP_DIR'] = APP_DIR
 
-#
-# CONFIG
-#
-default = {
-    'DATA': "localhost",
-    'SITE_NAME': "",
-    'TEMPLATES': "",
-    'TYPE': "localhost",
-    'URL': "http://localhost:5000"
-}
-config = {}
-for couples in default.items():
-	app.config[couples[0]] = os.environ.get(
-		couples[0],
-		couples[1]
-	)
-app.config['HOST_DIR'] = "./" if app.config['TYPE'] != 'localhost' else os.path.join(os.getcwd().split('backend')[0], 'backend/')
+config_with_app(app)
+routes_with_app(app)
 
-#
-# FLASK ENV
-#
-flask_env = {
-    "SITE_NAME": app.config["SITE_NAME"],
-    "templates": json.loads(app.config["TEMPLATES"]),
-    "WEB": app.config["WEB"]
-}
-
-#
-# ROUTES
-#
-INDEX_HTML_NAME = '_index.html' if app.config['TYPE'] == 'localhost' else '_index_prod.html'
-
-@app.route('/')
-def get_home():
-	return render_template(
-        INDEX_HTML_NAME,
-        **flask_env
-    )
-
-@app.route('/ping')
-def get_ping():
-    return 'ping'
-
-# serve index for all paths, so a client side router can take over
-@app.route('/<path:path>')
-def get_home_redirect(path):
-	return get_home()
-
-#
-# RUN
-#
 if __name__ == '__main__':
     app.run()
