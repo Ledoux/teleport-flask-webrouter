@@ -1,0 +1,14 @@
+node('$[gce.jenkins.node]') {
+
+    stage('Checkout') {
+      checkout scm
+      sh "git remote rm origin"
+      sh "git remote add origin '$[project.gitUrl]'"
+      sh "git config --global user.email '$[gce.jenkins.email]'"
+      sh "git config --global user.name '$[gce.jenkins.name]'"
+    }
+
+    stage('Deploy') {
+      sh "./scripts/${env.BRANCH_NAME}_gce_scp.sh"
+    }
+}
