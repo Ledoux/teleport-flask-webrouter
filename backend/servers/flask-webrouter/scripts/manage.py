@@ -1,6 +1,3 @@
-#
-# IMPORTS
-#
 import datetime
 import json
 import os
@@ -9,23 +6,16 @@ sys.path.append(os.path.join('/'.join(__file__.split('/')[:-1]), '../'))
 from flask.ext.script import Manager, Server
 from app import app
 
-#
-# ENVIRONMENT
-#
 PORT = 5000
 URL = os.environ.get('URL', 'http://localhost:' + str(PORT))
 SERVER = '//'.join(URL.split('//')[1:])
 if ':' in SERVER:
     PORT = int(SERVER.split(':')[-1])
 elif 'PORT' in os.environ:
-    PORT = os.environ['PORT']
+    PORT = int(os.environ['PORT'])
 
-#
-# MANAGER
-#
 manager = Manager(app)
 
-# Turn on debugger by default and reloader
 if app.config['TYPE'] == 'localhost':
     def json_serial(obj):
         if isinstance(obj,datetime.timedelta):
@@ -57,8 +47,5 @@ else:
         )
     )
 
-#
-# RUN
-#
 if __name__ == "__main__":
     manager.run()
